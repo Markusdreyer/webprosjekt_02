@@ -11,6 +11,9 @@ https://themeforest.net/item/schule-school-education-theme/21128775?s_rank=9
 ## Hans: 
 
 ## Simen:
+https://teslathemes.com/wordpress-themes/motive/
+
+https://colorlib.com/wp/template/course/
 
 ## Heidi:
 

@@ -4,6 +4,9 @@
 * [Whakaaro | Multi-Concept & One Page WordPress Theme by Lesya | ThemeForest](https://themeforest.net/item/rex-colorfull-multipurpose-wordpress-theme/12487403)
 
 ## Magnus:
+https://themeforest.net/item/norwood-minimalist-multipurpose-portfolio-wordpress-theme/21517204?s_rank=2
+
+https://themeforest.net/item/schule-school-education-theme/21128775?s_rank=9
 
 ## Hans: 
 

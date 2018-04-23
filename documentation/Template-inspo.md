@@ -16,5 +16,8 @@
  * https://colorlib.com/wp/template/course/
 
 ## Heidi:
+ * https://colorlib.com/wp/themes/illdy/
+
+ * https://themeforest.net/item/x-the-theme/5871901?s_rank=2
 
 ## Eivind:

@@ -9,6 +9,7 @@
  * https://themeforest.net/item/schule-school-education-theme/21128775?s_rank=9
 
 ## Hans: 
+ * https://themeforest.net/item/mikos-2-creative-woocommerce-wordpress-theme/20141088?s_rank=1
 
 ## Simen:
  * https://teslathemes.com/wordpress-themes/motive/

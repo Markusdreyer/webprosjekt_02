@@ -10,6 +10,7 @@
 
 ## Hans: 
  * https://themeforest.net/item/mikos-2-creative-woocommerce-wordpress-theme/20141088?s_rank=1
+ * https://themeforest.net/item/rex-colorfull-multipurpose-wordpress-theme/12487403?s_rank=12
 
 ## Simen:
  * https://teslathemes.com/wordpress-themes/motive/

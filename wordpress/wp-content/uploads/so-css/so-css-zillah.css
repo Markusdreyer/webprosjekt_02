@@ -1,0 +1,28 @@
+/*To remove the header-text
+.page-main-header {
+  display: none;
+}
+
+
+To move Page Builder content all the way to the top
+#content {
+	margin-top: -371px;
+}
+
+
+
+article {
+    margin-bottom: 0;
+}
+
+.page article .title {
+    display: none;
+}
+
+.site-footer {
+    display: none;
+}
+
+#main {
+    padding-top: 0;
+}*/

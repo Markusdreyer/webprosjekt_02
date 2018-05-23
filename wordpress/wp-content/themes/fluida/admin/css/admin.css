@@ -1,0 +1,306 @@
+/**
+ * Styling for the admin page
+ *
+ * @package Fluida
+ */
+
+@import url("../../resources/fonts/fontfaces.css");
+
+.wrap,
+.wrap p {
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+.wrap h3 {
+	font-size: 1.1em;
+}
+
+#main-page {
+	display: block;
+	float: none;
+	max-width: 1280px;
+}
+
+#lefty  {
+	display: block;
+	float: left;
+	width: calc(90% - 360px);
+	padding: 0 15px;
+	background: #FFF;
+	border: 1px solid #eee;
+	padding: 3em 5%;
+}
+
+#righty {
+	display: block;
+	float: left;
+	width: 350px;
+	margin-top: 30px;
+}
+
+#righty p,
+#righty span,
+.form-table small,
+#righty ul li {
+	font-size: 14px;
+	color: #444;
+	font-family: Segoe UI;
+}
+
+#righty h3 {
+	padding: 1em 1.5em;
+	color: #333;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: default;
+	margin: 0;
+}
+
+.postbox .inside,
+.stuffbox .inside {
+	padding: 1em 1.5em 2em;
+	line-height: 1.5;
+}
+
+.postbox .inside p:first-child {
+	margin-top: 0;
+}
+
+.postbox {
+	width: 100%;
+	background: rgba(255, 255, 255, .5);
+	border-left: 0;
+	-webkit-border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+	border-radius: 0 10px 10px 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.wrap .button {
+    box-sizing: border-box;
+    display: table;
+    height: auto;
+    margin: 0 auto;
+	text-align: center;
+    padding: 1em 2em;
+	min-width: 220px;
+    text-transform: uppercase;
+	font-weight: bold;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-transition: .3s all ease-in-out;
+	-moz-transition: .3s all ease-in-out;
+	transition: .3s all ease-in-out;
+}
+
+.wrap a {
+	color: #08c;
+}
+
+.wrap .button:hover {
+	border-color: #08c;
+	color: #08c;
+}
+
+textarea#cryout-sysinfo {
+	font-family: Monaco, monospace;
+	white-space: pre;
+	overflow: auto;
+	display:block;
+	width: 100%;
+	background: #444;
+	color: #FFF;
+	padding: 2em;
+}
+
+.export {
+	overflow:hidden;
+}
+
+/* NEWS LISTS */
+.news .inside {
+	height: 220px;
+	overflow: auto;
+}
+
+#righty ul.news-list {
+    margin-top: 0;
+}
+
+#righty .news-list li {
+	margin-bottom: 1em;
+}
+
+#righty span.news-item-date {
+	color: #AAA;
+	font-size: 12px;
+	display: block;
+}
+
+a.news-header {
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	-webkit-transition: color .3s ease-in;
+	-moz-transition: color .3s ease-in;
+	transition: color .3s ease-in;
+}
+
+a.news-header:hover,
+a.news-read:hover {
+	color: #f42b00 !important;
+}
+
+a.news-more {
+	color: #444;
+	-webkit-transition: color .3s ease-in;
+	-moz-transition: color .3s ease-in;
+	transition: color .3s ease-in;
+}
+
+a.news-more:hover {
+	color: #000;
+}
+
+/* ADMIN HEADER AND LINKS */
+#admin_header {
+	display: table;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#admin_links {
+	display: table;
+	margin: 0 auto;
+}
+
+#admin_links a {
+	display: block;
+	float: left;
+	text-decoration: none;
+	font-size: 14px;
+	color: #FFF;
+	background: #333;
+	padding: 1em 2em;
+	margin: 2em 1em;
+	text-transform: uppercase;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	transition: .3s all;
+}
+
+#admin_links a:hover {
+	background: #08c;
+}
+
+#admin_links .blue-button {
+	background: #08c;
+}
+
+#admin_links .blue-button:hover {
+	opacity: .8;
+}
+
+.version {
+    clear: both;
+    color: #888;
+    display: block;
+	text-align: center;
+    font-size: 14px;
+    margin-top: -20px;
+}
+
+#customizer {
+	margin-top: 3em;
+	padding: 1.5em 2em 1.5em 4.5em;
+	font-size: 1em;
+	text-align: center;
+	color: #FFF;
+	background: #08c url(../images/logo-about-customize.png) no-repeat 1.5em 50%;
+	-webkit-transition: .3s all ease-in-out;
+	transition: .3s all ease-in-out;
+}
+
+#customizer:hover {
+	text-decoration: underline;
+}
+
+.wrap div.updated, .wrap div.error {
+	margin-bottom: 50px;
+}
+
+#cryout-settings-dialog {
+	display: none;
+}
+#cryout-settings-dialog textarea {
+	width: 97%;
+	min-height: 180px;
+	overflow: auto;
+}
+#cryout-settings-dialog p strong {
+	display: none;
+}
+#cryout-settings-dialog .settings-error {
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+/* ==RESPONSIVE ADMIN==
+--------------------------------*/
+
+@media (max-width: 1280px) {
+	#admin_links a {
+		margin: 2em .5em;
+		padding: .7em 1em;
+		font-size: 12px;
+	}
+	#admin_header {
+		display: block;
+	}
+	#admin_header img {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 1100px) {
+	#lefty  {
+		width: calc(90% - 260px);
+	}
+	#righty  {
+		width: 250px;
+	}
+}
+
+@media (max-width: 800px) {
+	#lefty {
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin-bottom: 30px;
+	}
+	#righty {
+		float: none;
+		clear: both;
+		margin: 0 auto;
+		width: 90%;
+	}
+	#righty .postbox {
+		border: 1px solid #e5e5e5;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+}
+
+/* FIN */

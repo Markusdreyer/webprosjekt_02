@@ -1,0 +1,44 @@
+/**
+ * Styling for the meta boxes
+ *
+ * @package Fluida
+ */
+
+#fluida_layout input[type="radio"] {
+    display: none;
+}
+
+#fluida_layout label span {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 7px;
+    margin-right: 7px;
+    border: 5px solid transparent;
+    line-height: 0;
+    -webkit-transition: .25s all ease-out;
+    transition: .25s all ease-out;
+}
+
+#fluida_layout label span:hover {
+    border-color: #EEE;
+}
+
+label#fluida_layout_default span {
+    display: block;
+}
+
+label#fluida_layout_default em {
+    display: block;
+    padding: 1.7em 1em;
+    border: 1px solid #DDD;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #AAA;
+}
+
+#fluida_layout label input[type="radio"]:checked + span {
+    border-color: #00a0d2;
+}

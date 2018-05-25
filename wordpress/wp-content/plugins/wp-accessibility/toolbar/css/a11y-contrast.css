@@ -35,9 +35,7 @@
 		outline: 1px solid #fff; 
     }
     
-    #fji4gj4 {
-        
-    }
+
 
     a, abbr, acronym, address, article, aside, b, basefont, bdi, big,
     blink, blockquote, body, button, canvas, caption, center, cite, code,
@@ -97,7 +95,7 @@
     span, h4, h4 a, h4 a b, h4 abbr, h4 center, h4 span, h5, h5 a, h5 a b,
     h5 abbr, h5 center, h5 span, h6, h6 a, h6 a b, h6 abbr, h6 center, h6
     span {
-        color: #50d0a0 !important;
+        color: #ffffff !important;
     }
 
     img {
@@ -106,8 +104,8 @@
     }
 
     button {
-        background: #600040 !important;
-        background-color: #600040 !important;
+        background: #ffffff !important;
+        background-color: #ffffff !important;
     }
 
     select {
@@ -181,7 +179,7 @@
     font, a:link h1, a:link h2, a:link h3, a:link h4, a:link h5, a:link
     h6, a:link i, a:link kbd, a:link small, a:link span, a:link strong,
     a:link tt, a:link u, a:link var {
-        color: #00b0FF !important;
+        color: rgb(255, 255, 255) !important;
     }
 
     a:link, a:link abbr, a:link acronym, a:link b, a:link basefont,
@@ -219,7 +217,7 @@
     h3, a:visited h4, a:visited h5, a:visited h6, a:visited i, a:visited
     kbd, a:visited small, a:visited span, a:visited strong, a:visited tt,
     a:visited u, a:visited var {
-        color: #00FFFF !important;
+        color: rgb(255, 255, 255) !important;
     }
 
     ::-moz-selection, ::selection {

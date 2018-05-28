@@ -4,8 +4,7 @@
  */
 
 // Cookie handler, non-$ style
-var toolbar_is_visible = 0;
-
+var is_visible = 0;
 function createCookie(name, value, days) {
 	if (days) {
 		var date = new Date();
@@ -48,30 +47,64 @@ function eraseCookie(name) {
 		$('.a11y-toolbar ul li a i').addClass('icon-white');
 	}
 
-	if(readCookie('a11y-hidden')) {
-		$(this).addClass('hidden');
-		$('#is_visible').attr('id', 'is_hidden').attr('aria-pressed', true).addClass('active');	
-	}
-
 
 	if (readCookie('a11y-larger-fontsize')) {
 		$('html').addClass('fontsize');
 		$('#is_normal_fontsize').attr('id', 'is_large_fontsize').attr('aria-pressed', true).addClass('active');
 	}
 
+	/*
+	if(readCookie('a11y-hidden')) {
+		$('a11y-toolbar').addClass('hidden');
+		$('#is_visible').attr('id', 'is_hidden').attr('aria-pressed', true).addClass('active');	
+	}*/
+
+	if(readCookie('a11y-hidden')) {
+		var toolbar = document.getElementsByClassName('a11y-toolbar-list-item'); {
+			for (var i = 1; i < 3; i++) {
+				toolbar[i].style.visibility = "hidden";
+			}
+		}
+	}
+
+	$('.toggle-hide').on('click', function (e) {
+		if (!is_visible) {
+			var toolbar = document.getElementsByClassName('a11y-toolbar-list-item'); {
+				for (var i = 1; i < 3; i++) {
+					toolbar[i].style.visibility = "hidden";
+				}
+			}
+			this.style['top'] = '88vh';
+			this.style['background-image'] = 'url:"/Applications/MAMP/htdocs/wordpress/wp-content/plugins/wp-accessibility/toolbar/fonts/css/PNG/icon-hide.png"" ';
+			is_visible = 1;
+			createCookie('a11y-hidden', '1');
+		} else {
+			var toolbar = document.getElementsByClassName('a11y-toolbar-list-item'); {
+				for (var i = 1; i < 3; i++) {
+					toolbar[i].style.visibility = "visible";
+				}
+			}
+			this.style['top'] = '0';
+			is_visible = 0;
+			eraseCookie('a11y-hidden');
+		}
+		
+	});
+
+
+	/*
 	$('.toggle-hide').on('click', function (e) {
 		if ($(this).attr('id') == "is_visible") {
-			$().addClass('hidden');
+			$('div').remove('a11y-toolbar-list');
 			$(this).attr('id', 'is_hidden').attr('aria-pressed', true).addClass('active');
 			createCookie('a11y-hidden', '1');
 		} else {
-			$('a11y-toolbar-list').removeClass('hidden');
+			$(this).removeClass('hidden');
 			$(this).attr('id', 'is_visible').attr('aria-pressed', false).removeClass('active');
 			eraseCookie('a11y-hidden');
 		}
-
 		return false;
-	});
+	});*/
 
 	$('.toggle-grayscale').on('click', function (e) {
 		if ($(this).attr('id') == "is_normal_color") {
@@ -82,6 +115,7 @@ function eraseCookie(name) {
 			$('body').removeClass('desaturated');
 			$(this).attr('id', 'is_normal_color').attr('aria-pressed', false).removeClass('active');
 			eraseCookie('a11y-desaturated');
+			
 		}
 		
 		return false;
@@ -93,11 +127,13 @@ function eraseCookie(name) {
 			$('body').addClass('contrast');
 			$(this).attr('id', 'is_high_contrast').attr('aria-pressed', true).addClass('active');
 			createCookie('a11y-high-contrast', '1');
+			eraseCookie('a11y-hidden');
 		} else {
 			$('#highContrastStylesheet').remove();
 			$('body').removeClass('contrast');
 			$(this).attr('id', 'is_normal_contrast').attr('aria-pressed', false).removeClass('active');
 			eraseCookie('a11y-high-contrast');
+			
 		}
 		
 		return false;

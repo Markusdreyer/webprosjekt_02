@@ -9,7 +9,7 @@
 	}
 }
 
-.hidden {
+.no-display {
     visibility: hidden;
 }
 
@@ -39,8 +39,12 @@
 .a11y-toolbar {
     position: fixed;
     z-index: 99999;
-    top: 43%;
+    top: 10%;
     left: 0;
+}
+
+.a11y-toggle-hide {
+    height: 200px;
 }
 
 .a11y-toolbar ul {

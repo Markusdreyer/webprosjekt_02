@@ -96,7 +96,7 @@ function wpa_toolbar_js() {
 	insert_a11y_toolbar += '<div class=\"" . $responsive . "a11y-toolbar$is_rtl$is_right\">';
 	insert_a11y_toolbar += '<ul class=\"a11y-toolbar-list\">';";
 		if ( get_option( 'wpa_toolbar' ) == 'on' && $enable_contrast ) {
-			echo "insert_a11y_toolbar += '<li class=\"a11y-toolbar-list-item\"><button type=\"button\" class=\"a11y-toggle-hide toggle-hide\" id=\"is_visible\" aria-pressed=\"false\"><span class=\"offscreen\">$hide</span><span class=\"aticon aticon-adjust\" aria-hidden=\"true\"></span></button></li>';";
+			echo "insert_a11y_toolbar += '<li class=\"a11y-toolbar-list-item\"><button type=\"button\" class=\"a11y-toggle-hide toggle-hide\" id=\"is_visible\" aria-pressed=\"false\"><span class=\"offscreen\">$hide</span><span class=\"\" aria-hidden=\"true\"></span></button></li>';";
 			echo "insert_a11y_toolbar += '<li class=\"a11y-toolbar-list-item\"><button type=\"button\" class=\"a11y-toggle-contrast toggle-contrast\" id=\"is_normal_contrast\" aria-pressed=\"false\"><span class=\"offscreen\">$contrast</span><span class=\"aticon aticon-adjust\" aria-hidden=\"true\"></span></button></li>';";
 			
 		}

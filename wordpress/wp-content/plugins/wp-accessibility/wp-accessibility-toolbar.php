@@ -21,10 +21,11 @@ function wpa_toolbar_html( $type = 'widget' ) {
 	$contrast         = __( 'Toggle High Contrast', 'wp-accessibility' );
 	$grayscale        = __( 'Toggle Grayscale', 'wp-accessibility' );
 	$fontsize         = __( 'Toggle Font size', 'wp-accessibility' );
+	$enable_hide 	  = ( 'on' == get_option( 'wpa-toolbar_gs' )  ) ? false : true;
 	$enable_grayscale = ( 'on' == get_option( 'wpa_toolbar_gs' ) && current_user_can( 'manage_options' ) ) ? true : false;
 	$enable_contrast  = ( 'off' == get_option( 'wpa_toolbar_ct' ) ) ? false : true;
 	$enable_fontsize  = ( 'off' == get_option( 'wpa_toolbar_fs' ) ) ? false : true;
-	$responsive       = ( 'on' == get_option( 'wpa_toolbar_mobile' ) ) ? 'a11y-responsive ' : '';
+	$responsive       = ( 'off' == get_option( 'wpa_toolbar_mobile' ) ) ? 'a11y-responsive ' : '';
 	$is_rtl           = ( is_rtl() ) ? ' rtl' : ' ltr';
 	$is_right         = ( 'on' == get_option( 'wpa_toolbar_right' ) ) ? ' right' : ' left';
 	$toolbar_type     = ( 'widget' == $type ) ? 'a11y-toolbar-widget' : 'a11y-toolbar';
@@ -79,9 +80,12 @@ function wpa_toolbar_js() {
 		$contrast         = __( 'Toggle High Contrast', 'wp-accessibility' );
 		$grayscale        = __( 'Toggle Grayscale', 'wp-accessibility' );
 		$fontsize         = __( 'Toggle Font size', 'wp-accessibility' );
+		$hide             = __( 'Hide Toolbar', 'wp-accessibility' );
 		$enable_grayscale = ( 'on' == get_option( 'wpa_toolbar_gs' ) && current_user_can( 'manage_options' ) ) ? true : false;
 		$enable_fontsize  = ( 'off' == get_option( 'wpa_toolbar_fs' ) ) ? false : true;
 		$enable_contrast  = ( 'off' == get_option( 'wpa_toolbar_ct' ) ) ? false : true;
+		$enable_hide  = ( 'off' == get_option( 'wpa_toolbar_hide' ) ) ? false : true;
+		
 
 		echo
 		"
@@ -92,7 +96,9 @@ function wpa_toolbar_js() {
 	insert_a11y_toolbar += '<div class=\"" . $responsive . "a11y-toolbar$is_rtl$is_right\">';
 	insert_a11y_toolbar += '<ul class=\"a11y-toolbar-list\">';";
 		if ( get_option( 'wpa_toolbar' ) == 'on' && $enable_contrast ) {
+			echo "insert_a11y_toolbar += '<li class=\"a11y-toolbar-list-item\"><button type=\"button\" class=\"a11y-toggle-hide toggle-hide\" id=\"is_visible\" aria-pressed=\"false\"><span class=\"offscreen\">$hide</span><span class=\"aticon aticon-adjust\" aria-hidden=\"true\"></span></button></li>';";
 			echo "insert_a11y_toolbar += '<li class=\"a11y-toolbar-list-item\"><button type=\"button\" class=\"a11y-toggle-contrast toggle-contrast\" id=\"is_normal_contrast\" aria-pressed=\"false\"><span class=\"offscreen\">$contrast</span><span class=\"aticon aticon-adjust\" aria-hidden=\"true\"></span></button></li>';";
+			
 		}
 		if ( get_option( 'wpa_toolbar' ) == 'on' && $enable_grayscale ) {
 			echo "insert_a11y_toolbar += '<li class=\"a11y-toolbar-list-item\"><button type=\"button\" class=\"a11y-toggle-grayscale toggle-grayscale\" id=\"is_normal_color\" aria-pressed=\"false\"><span class=\"offscreen\">$grayscale</span><span class=\"aticon aticon-tint\" aria-hidden=\"true\"></span></button></li>';";

@@ -4,6 +4,8 @@
  */
 
 // Cookie handler, non-$ style
+var toolbar_is_visible = 0;
+
 function createCookie(name, value, days) {
 	if (days) {
 		var date = new Date();
@@ -46,11 +48,31 @@ function eraseCookie(name) {
 		$('.a11y-toolbar ul li a i').addClass('icon-white');
 	}
 
+	if(readCookie('a11y-hidden')) {
+		$(this).addClass('hidden');
+		$('#is_visible').attr('id', 'is_hidden').attr('aria-pressed', true).addClass('active');	
+	}
+
+
 	if (readCookie('a11y-larger-fontsize')) {
 		$('html').addClass('fontsize');
 		$('#is_normal_fontsize').attr('id', 'is_large_fontsize').attr('aria-pressed', true).addClass('active');
 	}
-	
+
+	$('.toggle-hide').on('click', function (e) {
+		if ($(this).attr('id') == "is_visible") {
+			$().addClass('hidden');
+			$(this).attr('id', 'is_hidden').attr('aria-pressed', true).addClass('active');
+			createCookie('a11y-hidden', '1');
+		} else {
+			$('a11y-toolbar-list').removeClass('hidden');
+			$(this).attr('id', 'is_visible').attr('aria-pressed', false).removeClass('active');
+			eraseCookie('a11y-hidden');
+		}
+
+		return false;
+	});
+
 	$('.toggle-grayscale').on('click', function (e) {
 		if ($(this).attr('id') == "is_normal_color") {
 			$('body').addClass('desaturated');
@@ -94,6 +116,7 @@ function eraseCookie(name) {
 		
 		return false;
 	});
+
 
 	// Sets a -1 tabindex to ALL sections for .focus()-ing
 	var sections = document.getElementsByTagName("section");
